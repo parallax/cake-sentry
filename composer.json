@@ -23,6 +23,7 @@
     },
     "require": {
         "php": ">=5.3.0",
-        "composer/installers": "*"
+        "composer/installers": "*",
+        "raven/raven": "dev-master"
     }
 }
