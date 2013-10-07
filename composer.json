@@ -25,5 +25,8 @@
         "php": ">=5.3.0",
         "composer/installers": "*",
         "raven/raven": "*@dev"
+    },
+    "extra": {
+        "installer-name": "Sentry"
     }
 }
