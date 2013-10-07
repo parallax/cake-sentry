@@ -1,0 +1,28 @@
+{
+    "name": "snapshotmedia/cake-sentry",
+    "description": "CakePHP Sentry Plugin",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "behat", "shell"],
+    "homepage": "https://github.com/snapshotmedia/cake-sentry",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sandreu",
+            "homepage": "https://github.com/Sandreu",
+            "role": "Author"
+        },
+        {
+            "name": "Snapshot Media",
+            "homepage": "https://github.com/snapshotmedia",
+            "role": "Author"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Sandreu/cake-sentry/issues",
+        "source": "https://github.com/Sandreu/cake-sentry"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "composer/installers": "*"
+    }
+}
