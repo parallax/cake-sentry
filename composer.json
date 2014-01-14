@@ -1,9 +1,9 @@
 {
-    "name": "snapshotmedia/cake-sentry",
+    "name": "parallax/cake-sentry",
     "description": "CakePHP Sentry Plugin",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "behat", "shell"],
-    "homepage": "https://github.com/snapshotmedia/cake-sentry",
+    "homepage": "https://github.com/parallax/cake-sentry",
     "license": "MIT",
     "authors": [
         {
@@ -12,8 +12,8 @@
             "role": "Author"
         },
         {
-            "name": "Snapshot Media",
-            "homepage": "https://github.com/snapshotmedia",
+            "name": "Parallax Agency Ltd",
+            "homepage": "https://github.com/parallax",
             "role": "Author"
         }
     ],
