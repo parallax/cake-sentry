@@ -1,6 +1,6 @@
 <?php
 
-require 'CakeRavenClient.php';
+require_once('CakeRavenClient.php');
 App::import('Vendor', 'Sentry.Raven/lib/Raven/Autoloader');
 
 /**
