@@ -1,6 +1,6 @@
 <?php
 
-require 'CakeRavenClient.php';
+require_once('CakeRavenClient.php');
 App::import('Vendor', 'Sentry.Raven/lib/Raven/Autoloader');
 
 /**
@@ -22,13 +22,10 @@ class SentryErrorHandler extends ErrorHandler {
 
     public static function handleException(Exception $exception) {
         try {
-            // Avoid bot scan errors
-            if (($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
-                echo 'Cette url n\'est pas valide.';
-                exit(0);
+            // only log errors we don't want to hide
+            if (self::shouldLog($exception) && (Configure::read('debug')==0 || !Configure::read('Sentry.production_only'))) {
+                self::sentryLog($exception);
             }
-
-            self::sentryLog($exception);
 
             return parent::handleException($exception);
         } catch (Exception $e) {
@@ -45,5 +42,18 @@ class SentryErrorHandler extends ErrorHandler {
         } catch (Exception $e) {
             self::handleException($e);
         }
+    }
+
+    private static function shouldLog(Exception $exception) {
+        $config = Configure::read('Exception');
+        if (isset($config['skipLog']) && !empty($config['skipLog'])) {
+            foreach ((array)$config['skipLog'] as $class) {
+                if ($exception instanceof $class) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
