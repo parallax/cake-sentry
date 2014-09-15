@@ -24,8 +24,8 @@ class SentryErrorHandler extends ErrorHandler {
         try {
             // Avoid bot scan errors
             if (($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
-                echo 'Cette url n\'est pas valide.';
-                exit(0);
+                //echo 'Cette url n\'est pas valide.';
+                //exit(0);
             }
 
             self::sentryLog($exception);
