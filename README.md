@@ -26,6 +26,7 @@ Installation
 	
 	Configure::write('Sentry', array(
 		'production_only' => false, // true is default value -> no error in sentry when debug
+		'avoid_bot_scan_errors' => 'MissingController or MissingPlugin error message', // or false if you want Sentry to log MissingController and MissingPlugin Exceptions
 		'User' => array(
 			'model' => 'SpecialUser', // 'User' is default value
 			'email_field' => 'special_email' // default checks 'email' and 'mail' fields
@@ -62,7 +63,7 @@ Installation
 	echo $this->Html->script('ravenjs-min');
 	?>
 	<script type="text/javascript">
-		$.(function () {
+		$(function () {
 			<?php echo $this->element('Sentry.raven-js'); ?>
 		});
 	</script>
